@@ -7,14 +7,12 @@ on:
 jobs:
   CodeQL-Build:
     runs-on: ubuntu-latest
+   
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - language: javascript-typescript
-            build-mode: none
-          - language: python
-            build-mode: none
+        language: [javascript-typescript, python]
+
 
     permissions:
       # required for all workflows
